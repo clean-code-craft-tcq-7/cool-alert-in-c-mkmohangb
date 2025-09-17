@@ -4,11 +4,11 @@
 // ----------- STEP 2 -----------------
 // Minimal code to compile and fail the test in STEP 2 of test_cooling_alert.cpp
 
-// const float PASSIVE_COOLING_LIMIT = 40.0;
-// const float HI_ACTIVE_COOLING_LIMIT = 55.0;
+const float PASSIVE_COOLING_LIMIT = 40.0;
+const float HI_ACTIVE_COOLING_LIMIT = 55.0;
 
-// Action battery_temperature_to_action(CoolingType cooling_type, float temperature) {
-//     Action action;
+Action battery_temperature_to_action(CoolingType cooling_type, float temperature) {
+     Action action;
 //     // ------- STEP 3 -----------------
 //     // Minimal code to pass tests in test_cooling_alert.cpp
 
@@ -28,7 +28,7 @@
 //     // }
 
 //     //------- STEP 3 code ends -------
-//     return action;
-// }
+     return action;
+}
 
 // ----------- STEP 2 code ends -------
