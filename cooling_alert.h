@@ -19,6 +19,6 @@ typedef struct {
     char actionBody[256];
 } Action;
 
-// Action battery_temperature_to_action(CoolingType cooling_type, float temperature);
+Action battery_temperature_to_action(CoolingType cooling_type, float temperature);
 
 // ----------- STEP 2 code ends -------
