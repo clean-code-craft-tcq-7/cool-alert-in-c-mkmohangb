@@ -6,16 +6,16 @@ extern "C" {
 // ----------- STEP 5 -----------------
 // Separation of classification from the email action.
 
-// TEST(ClassifyTest, BatteryOk) {
-//     BatteryDataModel batteryData = {THERMAL_PASSIVE, 25};
-//     BatteryState state = classify_battery_state(batteryData);
-//     ASSERT_EQ(state, BATTERY_OK);
-// }
+TEST(ClassifyTest, BatteryOk) {
+    BatteryDataModel batteryData = {1, THERMAL_PASSIVE, 25};
+    BatteryState state = classify_battery_state(batteryData);
+    ASSERT_EQ(state, BATTERY_OK);
+}
 
-// TEST(ClassifyTest, BatteryAlert) {
-//     BatteryDataModel batteryData = {THERMAL_HYBRID, 60};
-//     BatteryState state = classify_battery_state(batteryData);
-//     ASSERT_EQ(state, BATTERY_ALERT);
-// }
+TEST(ClassifyTest, BatteryAlert) {
+    BatteryDataModel batteryData = {2, THERMAL_HYBRID, 60};
+    BatteryState state = classify_battery_state(batteryData);
+    ASSERT_EQ(state, BATTERY_ALERT);
+}
 
 // ----------- STEP 5 code ends -------
