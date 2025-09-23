@@ -9,25 +9,25 @@ const float HI_ACTIVE_COOLING_LIMIT = 55.0;
 
 Action battery_temperature_to_action(CoolingType cooling_type, float temperature) {
     Action action;
-//     // ------- STEP 3 -----------------
-//     // Minimal code to pass tests in test_cooling_alert.cpp
+     // ------- STEP 3 -----------------
+     // Minimal code to pass tests in test_cooling_alert.cpp
 
-//     // if (cooling_type == PASSIVE_COOLING && temperature > PASSIVE_COOLING_LIMIT) {
-//     //     action.actionType = ALERT_EMAIL;
-//     //     snprintf(action.actionBody, sizeof(action.actionBody),
-//     //         "Temperature alert: %.1fF", temperature);
+    if (cooling_type == PASSIVE_COOLING && temperature > PASSIVE_COOLING_LIMIT) {
+         action.actionType = ALERT_EMAIL;
+         snprintf(action.actionBody, sizeof(action.actionBody),
+             "Temperature alert: %.1fF", temperature);
 //     // // Step 4: duplicated logic for active cooling type
 //     // // } else if (cooling_type == HI_ACTIVE_COOLING && temperature > HI_ACTIVE_COOLING_LIMIT) {
 //     // //     action.actionType = ALERT_EMAIL;
 //     // //     snprintf(action.actionBody, sizeof(action.actionBody),
 //     // //         "Temperature alert: %.1fF", temperature);
 //     // // Step 4 code ends -------
-//     // } else {
-//     //     action.actionType = NO_ALERT;
-//     //     action.actionBody[0] = '\0';
-//     // }
+    } else {
+        action.actionType = NO_ALERT;
+        action.actionBody[0] = '\0';
+    }
 
-//     //------- STEP 3 code ends -------
+     //------- STEP 3 code ends -------
     return action;
 }
 
