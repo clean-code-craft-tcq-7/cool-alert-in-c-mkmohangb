@@ -5,7 +5,7 @@
 // Minimal code to compile and fail the test in STEP 2 of test_cooling_alert.cpp
 
 const float PASSIVE_COOLING_LIMIT = 40.0;
-// const float HI_ACTIVE_COOLING_LIMIT = 55.0;
+const float HI_ACTIVE_COOLING_LIMIT = 55.0;
 
 Action battery_temperature_to_action(CoolingType cooling_type, float temperature) {
     Action action;
@@ -17,10 +17,10 @@ Action battery_temperature_to_action(CoolingType cooling_type, float temperature
         snprintf(action.actionBody, sizeof(action.actionBody),
             "Temperature alert: %.1fF", temperature);
     // Step 4: duplicated logic for active cooling type
-    // } else if (cooling_type == HI_ACTIVE_COOLING && temperature > HI_ACTIVE_COOLING_LIMIT) {
-    //     action.actionType = ALERT_EMAIL;
-    //     snprintf(action.actionBody, sizeof(action.actionBody),
-    //         "Temperature alert: %.1fF", temperature);
+    } else if (cooling_type == HI_ACTIVE_COOLING && temperature > HI_ACTIVE_COOLING_LIMIT) {
+        action.actionType = ALERT_EMAIL;
+        snprintf(action.actionBody, sizeof(action.actionBody),
+            "Temperature alert: %.1fF", temperature);
     // Step 4 code ends -------
     } else {
         action.actionType = NO_ALERT;
